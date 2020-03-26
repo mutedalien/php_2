@@ -1,0 +1,7 @@
+<div class="images">
+    {% for nameImage in arrayNameImages %}
+        <a target="_blank" href="image.php?name={{nameImage}}">
+            <img src="data/mini_images/{{nameImage}}" class="mini_image" />
+        </a>
+    {% endfor %}
+</div>
