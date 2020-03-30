@@ -3,7 +3,7 @@ require_once 'vendor/autoload.php';
 require_once 'sistem/connect.php';
 
 $connect = new ConnectToDB();
-$data = $connect -> getRows(15);
+$data = $connect -> getRows(25);
 
 if (!isset($_GET['page'])) {
     $page = 2;
