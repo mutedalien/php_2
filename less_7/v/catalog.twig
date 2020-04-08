@@ -1,0 +1,18 @@
+<figure class="item-card">
+	<h3 class="item-card__title">{{ array_items.name }}</h3>
+	<br/>
+	<img src="{{ array_items.image_min_dir }}" alt="{{ array_items.name }}" class="item-card__image"/>
+	<p class='item-card__category'><strong>Статус: свободно</strong> {{ array_items.category }}</p>
+	<figcaption class="item-card__description"><strong>Описание:</strong> {{ array_items.description }}</figcaption>
+	<h4><div class='item-card__price'>Цена: {{ array_items.price }}</div></h4>
+	<form method='post'>
+            <strong>{{ title_options }} </strong>
+            <input type="number" hidden name='item_id' value='{{array_items.item_id}}'/>
+            <label>{{ name_option_a }}<input type="radio" name='option_id' value='{{value_option_a}}'/></label>
+            <label>{{ name_option_b }}<input type="radio" name='option_id' value='{{value_option_b}}'/></label>
+            <br><br>
+            <label>Кол-во&nbsp;<input type="number" name='count' value='1' /></label>
+            <br><br>
+            <input type="submit" value='{{ buy }}' />
+	</form>
+</figure>
