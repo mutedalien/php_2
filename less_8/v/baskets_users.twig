@@ -1,0 +1,32 @@
+<table>
+    <tr>
+        <th>Имя пользователя</th>
+        <th>Заказанная позиция</th>
+        <th>Опция позиции</th>
+        <th>Кол-во позиций</th>
+        <th>Цена</th>
+        <th>Статус</th>
+    </tr>
+    {% for order in basktets_users %}
+        <tr>
+            <td>{{ order.name }}</td>
+            <td>{{ order.item_name }}</td>
+            <td>{{ order.option_name }}</td>
+            <td>{{ order.count }}</td>
+            <td>{{ order.price }}</td>
+            <td>
+                <form method="post">
+                    {# {% for ind in status %}
+                        {% if ind == order.basket_id and status[1] == 'processing' %}HELLO{% endif %}
+                    {% endfor %} #}
+                    <select name="change">
+                        <option value="{{order.basket_id}}_processing" name="">Обработка</option>
+                        <option value="{{order.basket_id}}_accepted" name="">Принят</option>
+                        <option value="{{order.basket_id}}_completed" name="">Завершен</option>
+                    </select>
+                    <input type="submit" value="Применить">
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
