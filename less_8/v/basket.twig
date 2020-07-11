@@ -1,0 +1,17 @@
+<table>
+    <h3>{{title}}</h3>
+    <tr>
+        <th>Название позиции</th>
+        <th>Кол-во человек</th>
+        <th>Опции</th>
+        <th>Цена</th>
+    </tr>
+    {% for item in basket | reverse %}
+        <tr>
+            <td>{{item.item_name}}</td>
+            <td>{{item.count}}</td>
+            <td>{{item.option_name}}</td>
+            <td>{{item.price}}</td>
+        </tr>
+    {% endfor %}
+</table>
